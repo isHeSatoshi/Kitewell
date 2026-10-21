@@ -1,0 +1,20 @@
+[package]
+name = "event_counter"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Generic per-key event counter for Soroban"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = "28.0.0-rc.2"
+
+[dev-dependencies]
+soroban-sdk = { version = "28.0.0-rc.2", features = ["testutils"] }
+
+# This crate is deliberately standalone: it is not a member of the
+# `contracts/` workspace, so it declares its own workspace root here.
+[workspace]
